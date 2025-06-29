@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data in Art and Creativity - Interactive platform exploring the intersection of data visualization and creative expression">
+    <meta name="keywords" content="data visualization, art, creativity, interactive, accessibility">
+    <title>Data in Art and Creativity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Background Animation Canvas -->
+    <canvas id="background-canvas" class="background-canvas" aria-hidden="true"></canvas>
+
+    <!-- Floating Particles -->
+    <div class="floating-particles" aria-hidden="true">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Art<span class="logo-accent">lytics</span></h1>
+                        <p>"Data. Art. Magic."</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">
+                        <span class="nav-link-text">Home</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                    <a href="#interactive" class="nav-link">
+                        <span class="nav-link-text">Interactive</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                    <a href="#gallery" class="nav-link">
+                        <span class="nav-link-text">Gallery</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                    <a href="#tools" class="nav-link">
+                        <span class="nav-link-text">Tools</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                    <a href="#playground" class="nav-link">
+                        <span class="nav-link-text">Playground</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                </div>
+
+                <!-- Controls -->
+                <div class="nav-controls">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-inner">
+                            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            </svg>
+                            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="#home">Home</a>
+                <a href="#interactive">Interactive</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#tools">Tools</a>
+                <a href="#playground">Playground</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background-effects">
+                <div class="hero-gradient-orb orb-1"></div>
+                <div class="hero-gradient-orb orb-2"></div>
+                <div class="hero-gradient-orb orb-3"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon">✨</span>
+                        <span>Transforming Data into Visual Stories</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="hero-title-line">Data in</span>
+                        <span class="hero-title-accent">Art & Creativity</span>
+                        <div class="title-decoration">
+                            <div class="decoration-line"></div>
+                            <div class="decoration-dot"></div>
+                            <div class="decoration-line"></div>
+                        </div>
+                    </h1>
+                    
+                    <div class="hero-subtitle">
+                        <p id="animated-text" class="animated-text">Transform Data into Art</p>
+                        <div class="text-cursor"></div>
+                    </div>
+                    
+                    <p class="hero-description">
+                        Explore the fascinating intersection where data visualization meets creative expression. 
+                        Discover interactive tools, immersive galleries, and playground environments designed 
+                        for everyone to experience the beauty of data-driven art.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-glow" onclick="scrollToSection('interactive')">
+                            <span class="btn-content">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="5,3 19,12 5,21 5,3"/>
+                                </svg>
+                                Start Exploring
+                            </span>
+                            <div class="btn-ripple"></div>
+                        </button>
+                        <button class="btn btn-secondary btn-glass" onclick="scrollToSection('gallery')">
+                            <span class="btn-content">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21,15 16,10 5,21"/>
+                                </svg>
+                                View Gallery
+                            </span>
+                        </button>
+                    </div>
+                    
+                    <div class="hero-features">
+                        <div class="feature-card feature-card-1">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                                </svg>
+                            </div>
+                            <h3>Interactive Data</h3>
+                            <p>Live visualizations that respond to your touch</p>
+                            <div class="feature-glow"></div>
+                        </div>
+                        <div class="feature-card feature-card-2">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3>Creative Tools</h3>
+                            <p>AI-powered art generation from your data</p>
+                            <div class="feature-glow"></div>
+                        </div>
+                        <div class="feature-card feature-card-3">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                                </svg>
+                            </div>
+                            <h3>Real-time Magic</h3>
+                            <p>Dynamic updates with stunning animations</p>
+                            <div class="feature-glow"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="scroll-indicator-container">
+                        <button class="scroll-indicator" onclick="scrollToSection('interactive')" aria-label="Scroll to content">
+                            <div class="scroll-wheel">
+                                <div class="scroll-dot"></div>
+                            </div>
+                            <div class="scroll-arrows">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6,9 12,15 18,9"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section id="interactive" class="interactive-section">
+            <div class="section-background">
+                <div class="section-pattern"></div>
+            </div>
+            
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">📊</span>
+                        <span>Live Data Visualization</span>
+                    </div>
+                    <h2>Interactive Data<span class="section-accent">Visualizations</span></h2>
+                    <p>Experience real-time data transformations and interactive visualizations that respond to your exploration.</p>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="charts">
+                        <div class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                        </div>
+                        <span>Live Charts</span>
+                        <div class="tab-indicator"></div>
+                    </button>
+                    <button class="tab-btn" data-tab="users">
+                        <div class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <span>User Stats</span>
+                        <div class="tab-indicator"></div>
+                    </button>
+                    <button class="tab-btn" data-tab="global">
+                        <div class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <span>Global Data</span>
+                        <div class="tab-indicator"></div>
+                    </button>
+                    <button class="tab-btn" data-tab="realtime">
+                        <div class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                        </div>
+                        <span>Real-time</span>
+                        <div class="tab-indicator"></div>
+                    </button>
+                </div>
+
+                <div class="interactive-content">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 id="chart-title">Live Charts</h3>
+                            <p id="chart-description">Dynamic data visualization</p>
+                            <div class="chart-status">
+                                <div class="status-indicator"></div>
+                                <span>Live</span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="interactive-chart" class="chart-canvas"></canvas>
+                            <div class="chart-overlay">
+                                <div class="chart-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls-container">
+                        <h3>Interactive Controls</h3>
+                        
+                        <div class="control-group">
+                            <label>Data Range</label>
+                            <div class="slider-container">
+                                <input type="range" id="data-range" min="10" max="100" value="50" class="range-slider">
+                                <div class="slider-track"></div>
+                                <div class="slider-progress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label>Chart Color</label>
+                            <div class="color-picker">
+                                <button class="color-btn active" data-color="#3b82f6" style="background-color: #3b82f6;">
+                                    <div class="color-ripple"></div>
+                                </button>
+                                <button class="color-btn" data-color="#ef4444" style="background-color: #ef4444;">
+                                    <div class="color-ripple"></div>
+                                </button>
+                                <button class="color-btn" data-color="#10b981" style="background-color: #10b981;">
+                                    <div class="color-ripple"></div>
+                                </button>
+                                <button class="color-btn" data-color="#f59e0b" style="background-color: #f59e0b;">
+                                    <div class="color-ripple"></div>
+                                </button>
+                                <button class="color-btn" data-color="#8b5cf6" style="background-color: #8b5cf6;">
+                                    <div class="color-ripple"></div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">📈</div>
+                                <div class="stat-value" id="peak-value">0</div>
+                                <div class="stat-label">Peak Value</div>
+                                <div class="stat-trend">+12%</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-value" id="average-value">0</div>
+                                <div class="stat-label">Average</div>
+                                <div class="stat-trend">+8%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Gallery -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">🎨</span>
+                        <span>Curated Collection</span>
+                    </div>
+                    <h2>Data Artz<span class="section-accent">Gallery</span></h2>
+                    <p>Discover stunning artworks created from real data sets, where numbers become visual narratives and statistics transform into beauty.</p>
+                </div>
+
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <span>All</span>
+                        <div class="filter-count">6</div>
+                    </button>
+                    <button class="filter-btn" data-filter="visualization">
+                        <span>Visualization</span>
+                        <div class="fiylter-count">2</div>
+                    </button>
+                    <button class="filter-btn" data-filter="generative">
+                        <span>Generative</span>
+                        <div class="filter-count">2</div>
+                    </button>
+                    <button class="filter-btn" data-filter="interactive">
+                        <span>Interactive</span>
+                        <div class="filter-count">1</div>
+                    </button>
+                    <button class="filter-btn" data-filter="abstract">
+                        <span>Abstract</span>
+                        <div class="filter-count">1</div>
+                    </button>
+                </div>
+
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Gallery items will be populated by JavaScript -->
+                </div>
+
+                <div class="gallery-actions">
+                    <button class="btn btn-secondary btn-glass">
+                        <span class="btn-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                            Load More Artworks
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creative Tools -->
+        <section id="tools" class="tools-section">
+            <div class="section-background">
+                <div class="section-pattern"></div>
+            </div>
+            
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">🛠️</span>
+                        <span>Create & Design</span>
+                    </div>
+                    <h2>Creative<span class="section-accent">Tools</span></h2>
+                    <p>Express your creativity with our interactive tools. Draw, generate, and create unique data-driven art pieces.</p>
+                </div>
+
+                <div class="tools-layout">
+                    <div class="tools-panel">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                                <path d="M2 2l7.586 7.586"/>
+                                <circle cx="11" cy="11" r="2"/>
+                            </svg>
+                            Tools
+                        </h3>
+                        
+                        <div class="tool-buttons">
+                            <button class="tool-btn active" data-tool="brush">
+                                <div class="tool-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/>
+                                        <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/>
+                                    </svg>
+                                </div>
+                                <span>Brush</span>
+                                <div class="tool-indicator"></div>
+                            </button>
+                            <button class="tool-btn" data-tool="generative">
+                                <div class="tool-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <span>Generative</span>
+                                <div class="tool-indicator"></div>
+                            </button>
+                            <button class="tool-btn" data-tool="data-art">
+                                <div class="tool-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                                        <polyline points="10,17 15,12 10,7"/>
+                                        <line x1="15" y1="12" x2="3" y2="12"/>
+                                    </svg>
+                                </div>
+                                <span>Data Art</span>
+                                <div class="tool-indicator"></div>
+                            </button>
+                        </div>
+
+                        <div id="brush-controls" class="tool-controls">
+                            <h4>Brush Settings</h4>
+                            <div class="control-group">
+                                <label>Brush Size</label>
+                                <div class="slider-container">
+                                    <input type="range" id="brush-size" min="1" max="20" value="5" class="range-slider">
+                                    <div class="slider-track"></div>
+                                    <div class="slider-progress"></div>
+                                </div>
+                                <div class="range-value">5px</div>
+                            </div>
+                        </div>
+
+                        <div id="generative-controls" class="tool-controls hidden">
+                            <h4>Generation Mode</h4>
+                            <div class="mode-buttons">
+                                <button class="mode-btn active" data-mode="particles">
+                                    <span>Particles</span>
+                                </button>
+                                <button class="mode-btn" data-mode="waves">
+                                    <span>Waves</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4>Color Palette</h4>
+                        <div class="color-palette">
+                            <button class="palette-color active" data-color="#3b82f6" style="background-color: #3b82f6;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#ef4444" style="background-color: #ef4444;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#10b981" style="background-color: #10b981;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#f59e0b" style="background-color: #f59e0b;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#8b5cf6" style="background-color: #8b5cf6;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#ec4899" style="background-color: #ec4899;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#06b6d4" style="background-color: #06b6d4;">
+                                <div class="color-ripple"></div>
+                            </button>
+                            <button class="palette-color" data-color="#84cc16" style="background-color: #84cc16;">
+                                <div class="color-ripple"></div>
+                            </button>
+                        </div>
+
+                        <div class="tool-actions">
+                            <button class="btn btn-danger btn-glass" id="clear-canvas">
+                                <span class="btn-content">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="1,4 1,10 7,10"/>
+                                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                                    </svg>
+                                    Clear
+                                </span>
+                            </button>
+                            <button class="btn btn-success btn-glass" id="download-art">
+                                <span class="btn-content">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="7,10 12,15 17,10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                    Download
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="canvas-container">
+                        <div class="canvas-header">
+                            <h3>Creative Canvas</h3>
+                            <div class="canvas-tools">
+                                <button class="canvas-tool" title="Undo">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 7v6h6"/>
+                                        <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/>
+                                    </svg>
+                                </button>
+                                <button class="canvas-tool" title="Redo">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 7v6h-6"/>
+                                        <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/>
+                                    </svg>
+                                </button>
+                                <button class="canvas-tool" title="Fullscreen">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="canvas-wrapper">
+                            <canvas id="creative-canvas" class="creative-canvas"></canvas>
+                            <div class="canvas-grid"></div>
+                        </div>
+                        <div class="canvas-instructions">
+                            <p id="canvas-instruction">Click and drag to draw</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Playground -->
+        <section id="playground" class="playground-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">🎮</span>
+                        <span>Experiment & Play</span>
+                    </div>
+                    <h2>Data<span class="section-accent">Playground</span></h2>
+                    <p>Experiment with different data types and visualization methods. Watch data come alive through interactive animations and transformations.</p>
+                </div>
+
+                <div class="playground-layout">
+                    <div class="playground-controls">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                            Controls
+                        </h3>
+                        
+                        <div class="playback-controls">
+                            <button class="btn btn-primary btn-glow" id="play-pause">
+                                <span class="btn-content">
+                                    <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5,3 19,12 5,21 5,3"/>
+                                    </svg>
+                                    <svg class="pause-icon hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="6" y="4" width="4" height="16"/>
+                                        <rect x="14" y="4" width="4" height="16"/>
+                                    </svg>
+                                    <span class="play-text">Play</span>
+                                </span>
+                            </button>
+                            <button class="btn btn-secondary btn-glass" id="refresh-data">
+                                <span class="btn-content">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="1,4 1,10 7,10"/>
+                                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="data-type-selection">
+                            <h4>Data Type</h4>
+                            <button class="data-type-btn active" data-type="random">
+                                <div class="data-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                                    </svg>
+                                </div>
+                                <span>Random Numbers</span>
+                                <div class="data-indicator"></div>
+                            </button>
+                            <button class="data-type-btn" data-type="sine">
+                                <div class="data-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                                    </svg>
+                                </div>
+                                <span>Sine Wave</span>
+                                <div class="data-indicator"></div>
+                            </button>
+                            <button class="data-type-btn" data-type="fibonacci">
+                                <div class="data-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="20" x2="12" y2="10"/>
+                                        <line x1="18" y1="20" x2="18" y2="4"/>
+                                        <line x1="6" y1="20" x2="6" y2="16"/>
+                                    </svg>
+                                </div>
+                                <span>Fibonacci</span>
+                                <div class="data-indicator"></div>
+                            </button>
+                            <button class="data-type-btn" data-type="primes">
+                                <div class="data-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                                        <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                                    </svg>
+                                </div>
+                                <span>Prime Numbers</span>
+                                <div class="data-indicator"></div>
+                            </button>
+                        </div>
+
+                        <div class="visualization-selection">
+                            <h4>Visualization</h4>
+                            <div class="viz-grid">
+                                <button class="viz-btn active" data-viz="bars">
+                                    <span>Bar Chart</span>
+                                </button>
+                                <button class="viz-btn" data-viz="line">
+                                    <span>Line Chart</span>
+                                </button>
+                                <button class="viz-btn" data-viz="circles">
+                                    <span>Circle Pack</span>
+                                </button>
+                                <button class="viz-btn" data-viz="spiral">
+                                    <span>Spiral</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="settings-controls">
+                            <div class="setting-group">
+                                <label>Animation Speed</label>
+                                <div class="slider-container">
+                                    <input type="range" id="animation-speed" min="500" max="3000" step="100" value="1000" class="range-slider">
+                                    <div class="slider-track"></div>
+                                    <div class="slider-progress"></div>
+                                </div>
+                                <div class="range-value">1000ms</div>
+                            </div>
+                            <div class="setting-group">
+                                <label>Data Points</label>
+                                <div class="slider-container">
+                                    <input type="range" id="data-points" min="5" max="50" value="20" class="range-slider">
+                                    <div class="slider-track"></div>
+                                    <div class="slider-progress"></div>
+                                </div>
+                                <div class="range-value">20 points</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-visualization">
+                        <div class="viz-header">
+                            <h3 id="viz-title">Random Numbers - Bar Chart</h3>
+                            <div class="viz-status">
+                                <div class="status-indicator"></div>
+                                <p id="viz-status">Animation paused</p>
+                            </div>
+                        </div>
+                        <div class="viz-container">
+                            <canvas id="playground-canvas" class="playground-canvas"></canvas>
+                            <div class="viz-overlay">
+                                <div class="viz-grid"></div>
+                            </div>
+                        </div>
+                        <div class="data-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-value" id="max-stat">0</div>
+                                <div class="stat-label">Max</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">📉</div>
+                                <div class="stat-value" id="min-stat">0</div>
+                                <div class="stat-label">Min</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">📈</div>
+                                <div class="stat-value" id="avg-stat">0</div>
+                                <div class="stat-label">Avg</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🔢</div>
+                                <div class="stat-value" id="count-stat">0</div>
+                                <div class="stat-label">Count</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-background">
+            <div class="footer-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Art<span class="logo-accent">lytics</span></h3>
+                            <p>Creativity Unleashed</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Transforming data into beautiful, interactive art experiences. 
+                        Explore the intersection of analytics and creativity through 
+                        accessible, engaging visualizations.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Email" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <a href="#interactive">Interactive Data</a>
+                        <a href="#gallery">Art Gallery</a>
+                        <a href="#tools">Creative Tools</a>
+                        <a href="#playground">Data Playground</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Tutorials</a>
+                        <a href="#">Community</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Accessibility</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-love">
+                        Made with 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <b>for difest </b>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2024 RasyaUX. All rights reserved.
+                    </div>
+                </div>
+                <div class="footer-accessibility">
+                    <p>We are committed to providing an accessible experience for all users. 
+                    If you encounter any accessibility barriers, please <a href="#">contact us</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Accessibility Menu -->
+    <div id="accessibility-menu" class="accessibility-menu">
+        <div class="accessibility-panel">
+            <div class="accessibility-header">
+                <div class="accessibility-title">
+                    <div class="accessibility-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Accessibility</h2>
+                        <p>Customize your experience</p>
+                    </div>
+                </div>
+                <button id="close-accessibility" class="close-accessibility">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="accessibility-tabs">
+                <button class="accessibility-tab active" data-tab="visual">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    Visual
+                </button>
+                <button class="accessibility-tab" data-tab="navigation">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+                        <path d="M13 13l6 6"/>
+                    </svg>
+                    Navigation
+                </button>
+                <button class="accessibility-tab" data-tab="motion">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                    </svg>
+                    Motion
+                </button>
+            </div>
+
+            <div class="accessibility-content">
+                <div id="visual-tab" class="tab-content active">
+                    <div class="setting-section">
+                        <h3>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4,7 4,4 20,4 20,7"/>
+                                <line x1="9" y1="20" x2="15" y2="20"/>
+                                <line x1="12" y1="4" x2="12" y2="20"/>
+                            </svg>
+                            Font Size
+                        </h3>
+                        <div class="setting-options">
+                            <button class="setting-btn" data-setting="fontSize" data-value="small">Small <span>0.875x</span></button>
+                            <button class="setting-btn active" data-setting="fontSize" data-value="normal">Normal <span>1x</span></button>
+                            <button class="setting-btn" data-setting="fontSize" data-value="large">Large <span>1.25x</span></button>
+                            <button class="setting-btn" data-setting="fontSize" data-value="extra-large">Extra Large <span>1.5x</span></button>
+                        </div>
+                    </div>
+
+                    <div class="setting-section">
+                        <h3>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            Contrast
+                        </h3>
+                        <div class="setting-options">
+                            <button class="setting-btn active" data-setting="contrast" data-value="normal">Normal Contrast</button>
+                            <button class="setting-btn" data-setting="contrast" data-value="high">High Contrast</button>
+                            <button class="setting-btn" data-setting="contrast" data-value="maximum">Maximum Contrast</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="navigation-tab" class="tab-content">
+                    <div class="setting-section">
+                        <h3>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+                                <path d="M13 13l6 6"/>
+                            </svg>
+                            Focus Indicators
+                        </h3>
+                        <div class="toggle-setting">
+                            <button class="toggle-btn active" data-setting="focusRing" data-value="true">
+                                <span>Enhanced Focus Rings</span>
+                                <div class="toggle-switch">
+                                    <div class="toggle-slider"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="keyboard-info">
+                        <h4>Keyboard Navigation</h4>
+                        <div class="keyboard-shortcuts">
+                            <p><kbd>Tab</kbd> - Navigate forward</p>
+                            <p><kbd>Shift + Tab</kbd> - Navigate backward</p>
+                            <p><kbd>Enter</kbd> - Activate element</p>
+                            <p><kbd>Space</kbd> - Select/toggle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="motion-tab" class="tab-content">
+                    <div class="setting-section">
+                        <h3>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                            Animation Settings
+                        </h3>
+                        <div class="setting-options">
+                            <button class="setting-btn active" data-setting="motion" data-value="normal">Normal Motion</button>
+                            <button class="setting-btn" data-setting="motion" data-value="reduced">Reduced Motion</button>
+                            <button class="setting-btn" data-setting="motion" data-value="none">No Motion</button>
+                        </div>
+                    </div>
+
+                    <div class="motion-info">
+                        <h4>Motion Preferences</h4>
+                        <p id="motion-description">All animations and transitions are enabled for a rich experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accessibility-footer">
+                <p>Settings are saved automatically</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Accessibility Button -->
+    <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Open accessibility menu">
+        <div class="accessibility-toggle-inner">
+            <svg class="accessibility-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="4" r="2"/>
+                <path d="M10.2 3.2C10.2 2.5 10.7 2 11.4 2h1.2c.7 0 1.2.5 1.2 1.2v.6c0 .7-.5 1.2-1.2 1.2h-1.2c-.7 0-1.2-.5-1.2-1.2V3.2z"/>
+                <path d="M8 21v-4.6c0-.6.4-1.2 1-1.4l1.9-.8c1.2-.5 2.4-.5 3.6 0l1.9.8c.6.2 1 .8 1 1.4V21"/>
+                <path d="M8 16V8a4 4 0 0 1 8 0v8"/>
+            </svg>
+            <svg class="close-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </div>
+        <div class="accessibility-ripple"></div>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
